@@ -1,0 +1,37 @@
+<!--validation.html-->
+ <!DOCTYPE html>
+ <htmllang="en">
+ <head>
+ <title>ValidationForm</title>
+ <linkhref="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel=
+"stylesheet">
+ <script>
+ functionvalidate()
+ {
+ letf=document.empForm;
+ letname = f.name.value.trim();
+ letemail=f.email.value.trim();
+ letmobile =f.mobile.value.trim();
+
+ if(!/^[A-Za-z\s]+$/.test(name)){alert("Invalid Name");returnfalse;}
+ if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){alert("InvalidEmail");returnfalse;}
+   if(!/^\d{10}$/.test(mobile)) {alert("Invalid Mobile");returnfalse;}
+
+ alert("FormValidated Successfully!");
+ returntrue;
+ }
+ </script>
+ </head>
+ <bodyclass="bg-light p-4">
+ <divclass="containerd-flexjustify-content-center">
+ <formname="empForm" onsubmit="return validate()" class="bg-white p-4shadow-sm rounded
+" style="width:300px">
+ <h4 class="text-center mb-3">EmployeeForm</h4>
+ <input class="form-control mb-2" type="text" name="name" placeholder="Name">
+ <input class="form-control mb-2" type="text" name="email" placeholder="Email">
+ <input class="form-control mb-2" type="text" name="mobile"placeholder="Mobile">
+ <button class="btn btn-primary w-100">Register</button>
+</form>
+</body>
+ </div>
+ </html>
