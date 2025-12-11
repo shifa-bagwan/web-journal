@@ -1,37 +1,43 @@
-<!--validation.html-->
- <!DOCTYPE html>
- <htmllang="en">
- <head>
- <title>ValidationForm</title>
- <linkhref="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel=
-"stylesheet">
- <script>
- functionvalidate()
- {
- letf=document.empForm;
- letname = f.name.value.trim();
- letemail=f.email.value.trim();
- letmobile =f.mobile.value.trim();
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Validation Form</title>
 
- if(!/^[A-Za-z\s]+$/.test(name)){alert("Invalid Name");returnfalse;}
- if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){alert("InvalidEmail");returnfalse;}
-   if(!/^\d{10}$/.test(mobile)) {alert("Invalid Mobile");returnfalse;}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
- alert("FormValidated Successfully!");
- returntrue;
- }
- </script>
- </head>
- <bodyclass="bg-light p-4">
- <divclass="containerd-flexjustify-content-center">
- <formname="empForm" onsubmit="return validate()" class="bg-white p-4shadow-sm rounded
-" style="width:300px">
- <h4 class="text-center mb-3">EmployeeForm</h4>
- <input class="form-control mb-2" type="text" name="name" placeholder="Name">
- <input class="form-control mb-2" type="text" name="email" placeholder="Email">
- <input class="form-control mb-2" type="text" name="mobile"placeholder="Mobile">
- <button class="btn btn-primary w-100">Register</button>
-</form>
+<script>
+function validate() {
+    let f = document.empForm;
+    let name = f.name.value.trim();
+    let email = f.email.value.trim();
+    let mobile = f.mobile.value.trim();
+
+    if (!/^[A-Za-z\s]+$/.test(name)) { alert("Invalid Name"); return false; }
+    if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) { alert("Invalid Email"); return false; }
+    if (!/^\d{10}$/.test(mobile)) { alert("Invalid Mobile"); return false; }
+
+    alert("Form Validated Successfully!");
+    return true;
+}
+</script>
+</head>
+
+<body class="bg-light p-4">
+
+<div class="container d-flex justify-content-center">
+  <form name="empForm" onsubmit="return validate()" class="bg-white p-4 shadow-sm rounded" style="width:300px">
+    <h4 class="text-center mb-3">Employee Form</h4>
+
+    <input class="form-control mb-2" type="text" name="name" placeholder="Name">
+    <input class="form-control mb-2" type="text" name="email" placeholder="Email">
+    <input class="form-control mb-2" type="text" name="mobile" placeholder="Mobile">
+    <input class="form-control mb-2" type="text" name="address" placeholder="Address">
+    <input class="form-control mb-3" type="number" name="salary" placeholder="Salary">
+
+    <button class="btn btn-primary w-100">Register</button>
+  </form>
+</div>
+
 </body>
- </div>
- </html>
+</html>

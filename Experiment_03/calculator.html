@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function calc(op) {
+            var n1 = parseFloat(document.getElementById('n1').value);
+            var n2 = parseFloat(document.getElementById('n2').value);
+            var res = 0;
+            switch(op) {
+                case '+': res = n1 + n2; break;
+                case '-': res = n1 - n2; break;
+                case '*': res = n1 * n2; break;
+                case '/': res = n1 / n2; break;
+            }
+            document.getElementById('result').value = res;
+        }
+    </script>
+</head>
+<body>
+    <h2>Simple Calculator</h2>
+    <input type="number" id="n1" placeholder="Num 1">
+    <input type="number" id="n2" placeholder="Num 2"><br><br>
+    
+    <button onclick="calc('+')">Sum</button>
+    <button onclick="calc('-')">Difference</button>
+    <button onclick="calc('*')">Product</button>
+    <button onclick="calc('/')">Quotient</button>
+    <br><br>
+    Result: <input type="text" id="result" readonly>
+</body>
+</html>
